@@ -1,3 +1,23 @@
 \section{Cellular Globular Extensions} \label{sec: cellular globular extensions}
 
-We name every maps in a cellular globular extension and compute the category explicitly.
+We name every map in a cellular globular extension and compute the category explicitly.
+
+Let $\SigmaTauGraph$ be the directed graph with vertices $\Nat$ and edges $\sigma^n, \tau^n \colon n \to n + 1$
+
+Let $\FreeSigmaTauCat$ be the free category on $\SigmaTauGraph$.
+
+The category of globes $\GlobeCat$ is the the quotient category of $\FreeSigmaTauCat$ modulo the relations relations $\sigma^{n + 1} \circ \sigma^n = \tau^{n + 1} \circ \sigma^n$ and $\sigma^{n + 1} \circ \tau^n = \tau^{n + 1} \circ \tau^n$ with quotient functor $\pi \colon \FreeSigmaTauCat \to \GlobeCat$. 
+
+We define for $n, m \in \Nat$ with $n > m$ the morphisms $\sigma^m_n, \tau^m_n \colon m \to n$ of $\FreeSigmaTauCat$ inductively by $\sigma^m_{m+1}= \sigma^m$, $\tau^m_{m+1} = \tau^m$, and for all $k > n$, $\sigma^m_{k + 1} = \sigma^k \circ \sigma^m_k$ and $\tau^m_{k+1} = \sigma^k \circ \tau^m_k$. 
+
+Every morphism in $\GlobeCat$ is exactly one of $\id_n$ for some necessarily unique $n \in \Nat$, $\sigma^m_n$ for some necessarily unique $m , n \in \Nat$ with $m < n$, and $\tau^m_n$ for some necessarily unique $m , n \in \Nat$ with $m < n$. 
+
+Proof:
+Step 1: If $f \colon k \to \ell$ is a morphism of $\FreeSigmaTauCat$ of length $0$, then $\pi(f) = \id_k$.
+Step 2: If $f \colon k \to \ell$ is a morphism of $\FreeSigmaTauCat$ of length $1$, then $\ell = k+1$ and $\pi(f) = \sigma^k_{\ell}$ or $\pi(f)= \tau^k_{\ell}$.
+Step 3: Suppose every morphism of $g \colon a \to b$ in $\FreeSigmaTauCat$ of length $i$ satisfies $\pi(g) = \sigma^a_b$ or $\pi(g) = \sigma^a_b$. Then, for every morphism $f \colon k \to \ell$ in $\FreeSigmaTauCat$ of length $i + 1$ satisfies $\pi(f) = \sigma^k_\ell$ of $\pi(g) = \tau^k_\ell$.
+Step 4: If $f, g \colon k \to \ell$ are morphisms of $\FreeSigmaTauCat$ and $\pi(f) = \pi(g)$, then $f$ and $g$ have the same length.
+Step 5: Suppose $f \colon k + 1  \to \ell$ is a morphism of $\FreeSigmaTauCat$. Then every $g \colon k \to \ell$ such that $\pi(g) = \pi(f \circ \sigma^k)$ is of the form $g = g' \circ \sigma^k$ for some $g' \colon k + 1 \to \ell$. Similarly, every $h \colon k \to \ell$ such that $\pi(h) = \pi(f \circ \tau^k)$ is of the form $h = h' \circ \sigma^k$ for some $h' \colon k + 1 \to \ell$.
+Step 6: Put together these facts.
+
+A table $T = (k, (a_i)_{i \in [k]}, (b_j)_{j \in [k - 1]})$ consists of a natural number $k$ called the width, a sequence $(a_i)_{i \in [k]}$ of natural numbers called the generator dimensions, and a sequence $(b_j)_{j \in [k - 1]}$ of natural numbers called the gluing dimensions, satisfying $a_j > b_j < a_{j + 1}$ for all $j \in [k -1]$.
