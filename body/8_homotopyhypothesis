@@ -1,0 +1,6 @@
+\section{Homotopy Hypothesis} \label{sec: homotopy hypothesis}
+
+We prove that a natural transformation of topological realization induces a natural weak equivalence between the associated Kan extensions to models.
+
+We prove that a topological realization induces a Quillen equivalence between models over a coherator and spaces and homotopies between topological realization give rise to natural weak equivalences between the corresponding Quillen adjunctions.
+
