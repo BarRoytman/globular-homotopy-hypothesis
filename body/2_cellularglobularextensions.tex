@@ -21,3 +21,17 @@ Step 5: Suppose $f \colon k + 1  \to \ell$ is a morphism of $\FreeSigmaTauCat$. 
 Step 6: Put together these facts.
 
 A table $T = (k, (a_i)_{i \in [k]}, (b_j)_{j \in [k - 1]})$ consists of a natural number $k$ called the width, a sequence $(a_i)_{i \in [k]}$ of natural numbers called the generator dimensions, and a sequence $(b_j)_{j \in [k - 1]}$ of natural numbers called the gluing dimensions, satisfying $a_j > b_j < a_{j + 1}$ for all $j \in [k -1]$.
+
+Let $\Zigzag_k$ be the category specified as follows. The object set of $\Zigzag_k$ is $[k] \amalg [k - 1]$ with $\alpha_i$ denoting the image of of $i \in [k]$ and $\beta_j$ denoting the image of $j \in [k - 1]$ in $[k] \amalg [k-1]$ under the coprojections. The category $\Zigzag_k$ is the free category on the graph with edges $\ell_j \colon \beta_j \to \alpha_j$ and $r_j \colon \beta_j \to \alpha_{j + 1}$ for all $j \in [k - 1]$.
+
+Every morphism of $\Zigzag_k$ is precisely one of $\ell_j$, $r_j$, $\id_{\alpha_i}$, or $\id_{\beta_j}$ for precisely one index $i \in [k]$ or $j \in [k - 1]$ as appropriate.
+
+For each table $T = (k, (a_i)_{i \in [k]}, (b_j)_{j \in [k - 1]})$, the functor $\zigzagtable_T \colon \Zigzag_k \to \GlobeCat$ is the unique functor with $\zigzagtable_T(\alpha_i) = a_i$ for all $i \in [k]$, $\zigzagtable_T(\beta_j) = b_j$ for all $i \in [k-1]$, $\zigzagtable_T(\ell_j) = \sigma^{a_j}_{b_j}$, and $\zigzagtable_T(r_j) = \tau^{a_{j+1}}_{b_j}$.
+
+A globular extension is a category $\mathcal{C}$ equipped with a functor $F \colon \GlobeCat \to \mathcal{C}$ such that for every table $T$, $F \circ \zigzagtable_T$ has a colimit.
+
+A globular functor $H \colon (\mathcal{C}, F) \to (\mathcal{C}', F')$ between globular extensions $(\mathcal{C}, F), (\mathcal{C}', F')$ is a functor $H \colon \mathcal{C} \to \mathcal{C'}$ such that $H \circ F = F'$ and $H$ preserves the colimits of $F \circ \zigzagtable_T$ for each table $T$.
+
+The notions of natural transformations and natural isomorphisms of between globular functors are inherited from the underlying functors.
+
+A globular extension $(\mathcal{C}, F)$ is a globular completion if for any globular extension $(\mathcal{C}', F')$, there exists a globular functor unique up to natural isomorphism $H \colon (\mathcal{C}, F) \to (\mathcal{C}', F')$. 
