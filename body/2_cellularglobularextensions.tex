@@ -20,9 +20,11 @@ Step 4: If $f, g \colon k \to \ell$ are morphisms of $\FreeSigmaTauCat$ and $\pi
 Step 5: Suppose $f \colon k + 1  \to \ell$ is a morphism of $\FreeSigmaTauCat$. Then every $g \colon k \to \ell$ such that $\pi(g) = \pi(f \circ \sigma^k)$ is of the form $g = g' \circ \sigma^k$ for some $g' \colon k + 1 \to \ell$. Similarly, every $h \colon k \to \ell$ such that $\pi(h) = \pi(f \circ \tau^k)$ is of the form $h = h' \circ \sigma^k$ for some $h' \colon k + 1 \to \ell$.
 Step 6: Put together these facts.
 
-A table $T = (k, (a_i)_{i \in [k]}, (b_j)_{j \in [k - 1]})$ consists of a natural number $k$ called the width, a sequence $(a_i)_{i \in [k]}$ of natural numbers called the generator dimensions, and a sequence $(b_j)_{j \in [k - 1]}$ of natural numbers called the gluing dimensions, satisfying $a_j > b_j < a_{j + 1}$ for all $j \in [k -1]$.
+A table $T = (k, (a_i)_{i \in [k]}, (b_j)_{j \in [k - 1]})$ consists of a natural number $k$ called the width, a sequence $(a_i)_{i \in [k]}$ of natural numbers called the generator dimensions, and a sequence $(b_j)_{j \in [k - 1]}$ of natural numbers called the gluing dimensions, satisfying $a_j > b_j < a_{j + 1}$ for all $j \in [k -1]$. The set of tables is denoted $\Table$.
 
 Let $\Zigzag_k$ be the category specified as follows. The object set of $\Zigzag_k$ is $[k] \amalg [k - 1]$ with $\alpha_i$ denoting the image of of $i \in [k]$ and $\beta_j$ denoting the image of $j \in [k - 1]$ in $[k] \amalg [k-1]$ under the coprojections. The category $\Zigzag_k$ is the free category on the graph with edges $\ell_j \colon \beta_j \to \alpha_j$ and $r_j \colon \beta_j \to \alpha_{j + 1}$ for all $j \in [k - 1]$.
+
+The length $0$ morphisms of $\Zigzag_k$ are identities, the length $1$ morphisms are the edges of the graph, and since every edge has target in some $\alpha_i$ and source in some $\beta_j$, there is no target equal to any source and there are no length $2$ morphisms. Consequently there are no length $2 + m$ morphisms for any $m \in \Nat$. The classification easily follows.
 
 Every morphism of $\Zigzag_k$ is precisely one of $\ell_j$, $r_j$, $\id_{\alpha_i}$, or $\id_{\beta_j}$ for precisely one index $i \in [k]$ or $j \in [k - 1]$ as appropriate.
 
@@ -34,4 +36,12 @@ A globular functor $H \colon (\mathcal{C}, F) \to (\mathcal{C}', F')$ between gl
 
 The notions of natural transformations and natural isomorphisms of between globular functors are inherited from the underlying functors.
 
-A globular extension $(\mathcal{C}, F)$ is a globular completion if for any globular extension $(\mathcal{C}', F')$, there exists a globular functor unique up to natural isomorphism $H \colon (\mathcal{C}, F) \to (\mathcal{C}', F')$. 
+A globular extension $(\mathcal{C}, F)$ is a globular completion if for any globular extension $(\mathcal{C}', F')$, there exists a globular functor unique up to natural isomorphism $H \colon (\mathcal{C}, F) \to (\mathcal{C}', F')$.
+
+While a globular completion is completely characterized by its universal property and examples of globular completions are plenty in the literature, we will still benefit from giving our own. While it is not a canonical description by any means, its use will reduce the logical complexity of the arguments to follow. 
+
+For a category $\mathcal{C}$, let $\mathcal{C}^{\triangleright}$ denote the category obtained by adjoining a terminal object $*$ to $\mathcal{C}$ via morphisms $!_a \colon a \to *$ for every object $a \in \mathcal{C}$. 
+
+The subglobe category $\subglobe$ is defined as the pushout of categories $\GlobeCat \leftarrow \coprod_{T \in \Table} \Zigzag_k \rightarrow \coprod_{T \in \Table} \Zigzag_k^{\triangleright}$.
+
+The objects of $\subglobe$ are identified with $\Nat \amalg \Table$ with $\Nat$ corresponding to the objects of $\mathcal{G}$ and each $T \in \Table$ corresponding to the object $*$ from the $T$-summand of $\coprod_{T \in \Table} \Zigzag_k^{\triangleright}$.
