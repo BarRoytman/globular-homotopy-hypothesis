@@ -28,7 +28,7 @@ The length $0$ morphisms of $\Zigzag_k$ are identities, the length $1$ morphisms
 
 Every morphism of $\Zigzag_k$ is precisely one of $\ell_j$, $r_j$, $\id_{\alpha_i}$, or $\id_{\beta_j}$ for precisely one index $i \in [k]$ or $j \in [k - 1]$ as appropriate.
 
-For each table $T = (k, (a_i)_{i \in [k]}, (b_j)_{j \in [k - 1]})$, the functor $\zigzagtable_T \colon \Zigzag_k \to \GlobeCat$ is the unique functor with $\zigzagtable_T(\alpha_i) = a_i$ for all $i \in [k]$, $\zigzagtable_T(\beta_j) = b_j$ for all $i \in [k-1]$, $\zigzagtable_T(\ell_j) = \sigma^{a_j}_{b_j}$, and $\zigzagtable_T(r_j) = \tau^{a_{j+1}}_{b_j}$.
+For each table $T = (k, (a_i)_{i \in [k]}, (b_j)_{j \in [k - 1]})$, the functor $\zigzagtable_T \colon \Zigzag_k \to \GlobeCat$ is the unique functor with $\zigzagtable_T(\alpha_i) = a_i$ for all $i \in [k]$, $\zigzagtable_T(\beta_j) = b_j$ for all $i \in [k-1]$, $\zigzagtable_T(\ell_j) = \sigma^{b_j}_{a_j}$, and $\zigzagtable_T(r_j) = \tau^{b_{j}}_{a_{j+1}}$.
 
 A globular extension is a category $\mathcal{C}$ equipped with a functor $F \colon \GlobeCat \to \mathcal{C}$ such that for every table $T$, $F \circ \zigzagtable_T$ has a colimit.
 
@@ -40,7 +40,7 @@ A globular extension $(\mathcal{C}, F)$ is a globular completion if for any glob
 
 While a globular completion is completely characterized by its universal property and examples of globular completions are plenty in the literature, we will still benefit from giving our own. While it is not a canonical description by any means, its use will reduce the logical complexity of the arguments to follow. 
 
-For a category $\mathcal{C}$, let $\mathcal{C}^{\triangleright}$ denote the category obtained by adjoining a terminal object $*$ to $\mathcal{C}$ via morphisms $!_a \colon a \to *$ for every object $a \in \mathcal{C}$. 
+For a category $\mathcal{C}$, let $\mathcal{C}^{\triangleright}$ denote the category obtained by adjoining a terminal object $*$ to $\mathcal{C}$ via morphisms $!_a \colon a \to *$ for every object $a \in \mathcal{C}$.  
 
 The subglobe category $\subglobe$ is defined as the pushout of categories $\GlobeCat \leftarrow \coprod_{T \in \Table} \Zigzag_k \rightarrow \coprod_{T \in \Table} \Zigzag_k^{\triangleright}$.
 
